@@ -3,6 +3,7 @@
 :root {
   --primary-green-200: hsl(148, 38%, 91%);
   --primary-green-600: hsl(169, 82%, 27%);
+  --primary-green-800: hsl(169, 82%, 17%);
 
   --neutral-grey-500: hsl(186, 15%, 59%);
   --neutral-grey-900: hsl(187, 24%, 22%);
@@ -13,6 +14,7 @@
 @theme inline {
   --color-primary-green-200: var(--primary-green-200);
   --color-primary-green-600: var(--primary-green-600);
+  --color-primary-green-800: var(--primary-green-800);
   
   --color-neutral-grey-500: var(--neutral-grey-500);
   --color-neutral-grey-900: var(--neutral-grey-900);

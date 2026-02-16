@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${karla.variable} antialiased font-karla`}
+        className={`${karla.variable} antialiased font-karla bg-primary-green-200`}
       >
         {children}
       </body>
