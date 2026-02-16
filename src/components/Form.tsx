@@ -13,11 +13,14 @@ export default function Form(props: any) {
    })
   const [ errors, setErrors ] = useState<{firstName?: string, lastName?: string, email?: string, queryType?: string, message?: string, consent?: string}>({});
 
-  const handleChange = (field: 'firstName' | 'lastName' | 'email' | 'queryType' | 'message' | 'consent') => (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (field: 'firstName' | 'lastName' | 'email' | 'queryType' | 'message' | 'consent') => 
+  (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    
     setFormData(prev => ({ ...prev, [field]: e.target.value }))
 
-    if (field == 'consent') {
-      setFormData(prev => ({ ...prev, [field]: e.target.checked }))
+    if (field === 'consent') {
+      const target = e.target as HTMLInputElement; 
+      setFormData(prev => ({ ...prev, [field]: target.checked }))
     }
 
     setErrors(prev => ({ ...prev, [field]: '' }))
