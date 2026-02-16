@@ -113,12 +113,12 @@ export default function Form(props: any) {
           
           <div className='grid gap-4 sm:grid-cols-2'>            
             <label htmlFor="general" className={`flex gap-4 items-center ${formData.queryType == 'option1' && 'bg-primary-green-200 border-primary-green-600'} border border-neutral-grey-500 focus:border-primary-green-600 hover:border-primary-green-600 outline-0 rounded-lg px-6 py-3 cursor-pointer duration-300`}>
-              <input type="radio" id='general' name='queryType' className='accent-primary-green-600 sm:w-5 sm:h-5' onChange={handleChange('queryType')} value={'option1'} />
+              <input type="radio" id='general' name='queryType' className='accent-primary-green-600 sm:w-5 sm:h-5' onChange={handleChange('queryType')} value={'option1'} checked={formData.queryType === 'option1'} />
               <span>General Enquiry</span>
             </label>
 
             <label htmlFor="support" className={`flex gap-4 items-center ${formData.queryType == 'option2' && 'bg-primary-green-200 border-primary-green-600'} border border-neutral-grey-500 focus:border-primary-green-600 hover:border-primary-green-600 outline-0 rounded-lg px-6 py-3 cursor-pointer duration-300`}>
-              <input type="radio" id='support' name='queryType' className='accent-primary-green-600 sm:w-5 sm:h-5' onChange={handleChange('queryType')} value={'option2'} />
+              <input type="radio" id='support' name='queryType' className='accent-primary-green-600 sm:w-5 sm:h-5' onChange={handleChange('queryType')} value={'option2'} checked={formData.queryType === 'option2'} />
               <span>Support Request</span>
             </label>
           </div>
