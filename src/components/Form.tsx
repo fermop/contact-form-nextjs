@@ -59,10 +59,6 @@ export default function Form(props: any) {
 
     setSuccess(true)
     setFormData({firstName: '', lastName: '', email: '', queryType: '', message: '', consent: false})
-
-    await new Promise(resolve => setTimeout(resolve, 4000))
-
-    setSuccess(false)
   }
 
   return (

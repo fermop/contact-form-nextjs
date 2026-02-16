@@ -12,7 +12,7 @@ export default function Home() {
         <main className="min-h-dvh grid place-items-center px-4 py-6">
           <Form setSuccess={setSuccess} />
 
-          {success && <Toast />}
+          {success && <Toast onClose={() => setSuccess(false)} />}
         </main>
     </div>
   );
