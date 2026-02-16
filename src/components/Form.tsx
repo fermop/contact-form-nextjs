@@ -1,8 +1,8 @@
-'use client'
 import React, { useState } from 'react'
 import { validateFirstName, validateLastName, validateEmail, validateQueryType, validateMessage, validateCheckBox } from "@/utils/validations"
 
-export default function Form() {
+export default function Form(props: any) {
+  const { setSuccess } = props
    const [ formData, setFormData ] = useState({
     firstName: '',
     lastName: '',
@@ -23,7 +23,7 @@ export default function Form() {
     setErrors(prev => ({ ...prev, [field]: '' }))
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const newErrors: {firstName?: string, lastName?: string, email?: string, queryType?: string, message?: string, consent?: string} = {}
 
@@ -55,7 +55,14 @@ export default function Form() {
       setErrors(newErrors);
       return;
     }
-    setErrors({}); 
+    setErrors({});
+
+    setSuccess(true)
+    setFormData({firstName: '', lastName: '', email: '', queryType: '', message: '', consent: false})
+
+    await new Promise(resolve => setTimeout(resolve, 4000))
+
+    setSuccess(false)
   }
 
   return (
