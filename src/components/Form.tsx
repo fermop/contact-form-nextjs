@@ -3,14 +3,14 @@ import { validateFirstName, validateLastName, validateEmail, validateQueryType, 
 
 export default function Form(props: any) {
   const { setSuccess } = props
-   const [ formData, setFormData ] = useState({
+  const [ formData, setFormData ] = useState({
     firstName: '',
     lastName: '',
     email: '',
     queryType: '',
     message: '',
     consent: false
-   })
+  })
   const [ errors, setErrors ] = useState<{firstName?: string, lastName?: string, email?: string, queryType?: string, message?: string, consent?: string}>({});
 
   const handleChange = (field: 'firstName' | 'lastName' | 'email' | 'queryType' | 'message' | 'consent') => 
@@ -28,6 +28,9 @@ export default function Form(props: any) {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setSuccess(true)
+    return
+
     const newErrors: {firstName?: string, lastName?: string, email?: string, queryType?: string, message?: string, consent?: string} = {}
 
     if (!validateFirstName(formData.firstName)) {

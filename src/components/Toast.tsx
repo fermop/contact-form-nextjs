@@ -23,7 +23,7 @@ export default function Toast({ onClose }: { onClose: () => void }) {
   }, [isClosing, onClose])
 
   return (
-    <div className={`absolute top-4 bg-primary-green-800 text-white p-6 space-y-2 rounded-xl ${isClosing ? 'animate-fade-out-down' : 'animate-fade-in-up'}`}>
+    <div className={`w-fit max-w-[92%] fixed top-4 left-0 right-0 bg-primary-green-800 text-white p-6 space-y-2 rounded-xl m-auto ${isClosing ? 'animate-fade-out-up' : 'animate-fade-in-up'}`}>
       <h2 className='flex items-center gap-2 font-bold'>
         <Image 
           src={'/images/icon-success-check.svg'}
